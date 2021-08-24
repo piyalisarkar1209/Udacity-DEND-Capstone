@@ -54,7 +54,7 @@ Table name -F_LISTING
 |review_count	|integer	|Total number of reviews for that listing id|
 |Premium flag	|varchar(1)	|This flag is to identify the listing as premium listing. (expected values - 'Y' as yes and 'N' as no)|
 
-able name -DIM_LISTING	
+Table name -DIM_LISTING	
 |Field Name    | Data Type | Description                     |
 |--------------|-----------|---------------------------------|
 |listing_id |	integer	|Listing id. Primary key|
@@ -63,6 +63,31 @@ able name -DIM_LISTING
 |price |	numeric(18,2)	|Price of the listing on that given date|
 |host_id	|integer	|Host id for that listing|
 
+Table name -DIM_PROPERTY	
+|Field Name    | Data Type | Description                     |
+|--------------|-----------|---------------------------------|
+|listing_id	|integer	|Listing id. Primary key|
+|host_id	|integer	|Host id for that listing. Primary key|
+|property_type	|varchar(2000)	|Type of the property. Values are like -Entire apartment, Entire house, Private room in apartment etc.|
+|room_type	|varchar(256)	|Type of rooms. Values are like - Private room, hotel room, shared room etc.|
+|accomodates	|integer	|Number of people could stay in that property|
+|bathrooms	|varchar(256)	|Number of bathrooms in that property. values are like-1 bath, 1 shared bath etc.|
+|bedrooms	|integer	|number of beed rooms in that property|
+|beds	|integer	|number of beds in that property|
+|amenities	|varchar(2000)	|List of amenities for that property, like- air conditioning, microwave,hair dryer etc.|
+|latitude	|numeric(18,2)	|Latitude of the property|
+|longitude	|numeric(18,2)	|Longitude of the property|
+|premium_flag	|varchar(1)	|"If the property is premium or not. expected values  'Y' as yes and 'N' as no. To get the information I have used few parameters like - 
+host_has_profile_pic = t
+host_identity_verified = t
+room_type  = Entire Home/apt
+superhost = t
+review_scores_rating > 4.5
+review_scores_accuracy	>4.5
+review_scores_cleanliness > 4.5
+review_scores_communication > 4.5
+review_scores_location > 4.5
+review_scores_value > 4.5" |
 ### Data Pipeline Design
 The data pipeline was designed using Apache Airflow. The whole process was segregated in several phases:
 - Creating the staging,dimension and fact tables
