@@ -48,7 +48,11 @@ The final data model consists of 6 dimension and 2 fact tables. Following are th
 Table name -DIM_LISTING	
 |Field Name    | Data Type | Description                     |
 |--------------|-----------|---------------------------------|
-|listing_id |	integer |	Listing id. FK to dim_listing table
+|listing_id |	integer |	Listing id. FK to dim_listing table|
+|neighbourhood_id |	Integer| Auto generated Neighbourhood Id. FK to dim_neighbourhood table|
+|avg_rating	|numeric(18,2)	|Average rating for that listing id|
+|review_count	|integer	|Total number of reviews for that listing id|
+|Premium flag	|varchar(1)	|This flag is to identify the listing as premium listing. (expected values - 'Y' as yes and 'N' as no)|
 
 
 ### Data Pipeline Design
