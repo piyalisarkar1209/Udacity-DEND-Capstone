@@ -40,6 +40,8 @@ The final data model consists of 6 dimension and 2 fact tables. Following are th
        - f_neighbourhood_listing
        - f_listing
 
+![data_model](https://github.com/piyalisarkar1209/udacity-DEND-Capstone/blob/main/data%20model.png)
+
 ### Data Pipeline Design
 The data pipeline was designed using Apache Airflow. The whole process was segregated in several phases:
 - Creating the staging,dimension and fact tables
