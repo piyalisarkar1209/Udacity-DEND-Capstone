@@ -45,14 +45,6 @@ The final data model consists of 6 dimension and 2 fact tables. Following are th
 ![data_model](https://github.com/piyalisarkar1209/udacity-DEND-Capstone/blob/main/data%20model.png)
 
 ### Data Dictionary for the final Data Model
-Table name -F_LISTING	
-|Field Name    | Data Type | Description                     |
-|--------------|-----------|---------------------------------|
-|listing_id |	integer |	Listing id. FK to dim_listing table|
-|neighbourhood_id |	Integer| Auto generated Neighbourhood Id. FK to dim_neighbourhood table|
-|avg_rating	|numeric(18,2)	|Average rating for that listing id|
-|review_count	|integer	|Total number of reviews for that listing id|
-|Premium flag	|varchar(1)	|This flag is to identify the listing as premium listing. (expected values - 'Y' as yes and 'N' as no)|
 
 Table name -DIM_LISTING	
 |Field Name    | Data Type | Description                     |
@@ -89,7 +81,6 @@ Table name -DIM_HOST
 |host_since	|date	|host since |
 |host_loaction	|varchar(1000)	|location of the host|
 
-
 Table name -DIM_DATE	
 |Field Name    | Data Type | Description                     |
 |--------------|-----------|---------------------------------|
@@ -106,6 +97,40 @@ Table name -DIM_DATE
 |quarter_actual	|integer	|quarter|
 |year_actual	|integer	|year|
 |weekend_indicator	|text	|indicator for weekend|
+
+Table name -DIM_DISTRICT	
+|Field Name    | Data Type | Description                     |
+|--------------|-----------|---------------------------------|
+|district_id	|integer	|District id. Primary Key|
+|district	|varchar(256)	|District Name|
+
+Table name -DIM_NEIGHBOURHOOD	
+|Field Name    | Data Type | Description                     |
+|--------------|-----------|---------------------------------|
+|neighbourhood_id	|integer	|Neighbourhood id. Primary key|
+|district_id	|integer	|District id|
+|neighbourhood	|varchar(256)|	Neighbourhood name|
+
+Table name -F_LISTING	
+|Field Name    | Data Type | Description                     |
+|--------------|-----------|---------------------------------|
+|listing_id |	integer |	Listing id. FK to dim_listing table|
+|neighbourhood_id |	Integer| Auto generated Neighbourhood Id. FK to dim_neighbourhood table|
+|avg_rating	|numeric(18,2)	|Average rating for that listing id|
+|review_count	|integer	|Total number of reviews for that listing id|
+|Premium flag	|varchar(1)	|This flag is to identify the listing as premium listing. (expected values - 'Y' as yes and 'N' as no)|
+
+Table name -F_NEIGHBOURHOOD_LISTING	
+|Field Name    | Data Type | Description                     |
+|--------------|-----------|---------------------------------|
+|Id_date	|integer	|Id for the actual date. FK to the date dimension table|
+|neighbourhood	|varchar (1000)	|Neighbourhood name|
+|neighbourhood_id	|Integer|	Auto generated Neighbourhood Id. FK to dim_neighbourhood table|
+|total_listing	|integer|	Total number of listngs for any neighbourhood on a given date|
+|available_listing	|integer|	Total number of listing where available flag = 't'  for any neighbourhood on a given date|
+|min_price	|numeric(18,2)|	Minimum price of the listings for any neighbourhood on a given date|
+|max_price	|numeric(18,2)|	Maximum price of the listings for any neighbourhood on a given date|
+|avg_price	|numeric(18,2)|	Average price of the listings for any neighbourhood on a given date|
 
 ### Data Pipeline Design
 The data pipeline was designed using Apache Airflow. The whole process was segregated in several phases:
