@@ -78,6 +78,35 @@ Table name -DIM_PROPERTY
 |latitude	|numeric(18,2)	|Latitude of the property|
 |longitude	|numeric(18,2)	|Longitude of the property|
 |premium_flag	|varchar(1)	|If the property is premium or not. expected values  'Y' as yes and 'N' as no. To get the information I have used few parameters like -<br>         host_has_profile_pic = t,<br>host_identity_verified = t,<br>room_type  = Entire Home/apt,<br>superhost = t,<br> review_scores_rating > 4.5,<br> review_scores_accuracy	>4.5,<br>    review_scores_cleanliness > 4.5,<br> review_scores_communication > 4.5,<br> review_scores_location > 4.5,<br> review_scores_value > 4.5 |
+
+Table name -DIM_HOST	
+|Field Name    | Data Type | Description                     |
+|--------------|-----------|---------------------------------|
+|host_id	|integer	|Host id. Primary key|
+|host_name	|varchar(256)	|Host name|
+|host_is_superhost	|varchar(1)	|Indicator for superhost. Expected values - 't' as true and 'f' as false|
+|host_url	|varchar(5000)	|URL for host information|
+|host_since	|date	|host since |
+|host_loaction	|varchar(1000)	|location of the host|
+
+
+Table name -DIM_DATE	
+|Field Name    | Data Type | Description                     |
+|--------------|-----------|---------------------------------|
+|id_date	|integer	|id of the date. Primary key|
+|date_actual	|date	|actual date|
+|day_name	|text	|name of the day|
+|day_of_week	|integer	|day of week|
+|day_of_month	|integer	|day of month|
+|current_date_flag	|integer	|flag for current date|
+|week_of_month	|integer	|Week of month|
+|week_of_year	|integer	|week of year|
+|month_number	|integer	|month number|
+|month _name	|text	|month name|
+|quarter_actual	|integer	|quarter|
+|year_actual	|integer	|year|
+|weekend_indicator	|text	|indicator for weekend|
+
 ### Data Pipeline Design
 The data pipeline was designed using Apache Airflow. The whole process was segregated in several phases:
 - Creating the staging,dimension and fact tables
