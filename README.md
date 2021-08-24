@@ -3,6 +3,8 @@ Capstone project for Udacity Data Engineering Nanodegree course
 
 ### Objective:
 The objective of this project is to create a data model and ETL flow for New York City Airbnb Open Data which will load Calendar Data and Listnig details. The data comes from kaggle (https://www.kaggle.com/arthbr11/new-york-city-airbnb-open-data). The data spans across multiple years and have more than a million rows. For this project we have used Calendar Data and Listing Data.
+The pupose of this data model is to provide the Airbnb user total number of listing, available listing, maximum price, minimum price, average price in a neighbourhood on a given date.
+Also, it will provide the Airbnb user information about average rating, review count of the listings in any particular neighbourhood. and if that listing considered as Premium listing( to mark any listing as premium I have used some parameters from staging tables).
 
 ### Datasource Details:
 The data is gathered from Kaggle. Following datasets are in scope of this project:
@@ -23,9 +25,9 @@ Listings.csv ( Column names - id, listing_url, scrape_id,last_scraped, name, des
 The scope of this project is to create a data pipeline which will accept the source files, process and clean them, transform as per the the need of the final data model and load them in dimension and fact tables. We are going to read the source files from local storage, use airflow and python to create a data pipeline, and eventually load the processed and transformed data into the data model created in local postgresql database.
 
 ### Technology used:
-- Apache Airflow
+- Apache Airflow -Allows for easy execution of ETL
 - Python
-- PostgreSQL
+- Amazon Redshift cluster - Data storage
 
 ### Data Model
 The final data model consists of 6 dimension and 2 fact tables. Following are the names of the tables:
