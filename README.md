@@ -59,11 +59,11 @@ Following is the airflow dag for the whole process:
 ### Process Result
 From the resultset of fact table f_neighbourhood_list, user can get the information that on 3rd July,2021 at Caroll Gardens Neighbourhood, there are 180 Airbnb listings. But only 26 are available. The minimum price, maximum price and average price of the listings are as follows - $39, $1333 and $191.
 
-![f_neighbourhood_listing](https://github.com/piyalisarkar1209/udacity-DEND-Capstone/blob/main/f_nnnneighbourhood_list.PNG)
+![f_neighbourhood_listing](https://github.com/piyalisarkar1209/udacity-DEND-Capstone/blob/main/f_neighbourhood_list.PNG)
 
 From the resultset of fact table f_listing, user can get information about listings in neighbourhood_id 107 (lower east side), with total number of review, average rating and if the listing is a premium listing or not. For example, 46251446 listing id has average rating 4.82 and total 34 reviews are there but the listing is not a premium listing.
 
-![fact_listing](https://github.com/piyalisarkar1209/udacity-DEND-Capstone/blob/main/f_list.PNG)
+![fact_listing](https://github.com/piyalisarkar1209/udacity-DEND-Capstone/blob/main/f_listing.PNG)
 
 ### Addressing Other Scenarios
 
