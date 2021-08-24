@@ -45,7 +45,7 @@ The final data model consists of 6 dimension and 2 fact tables. Following are th
 ![data_model](https://github.com/piyalisarkar1209/udacity-DEND-Capstone/blob/main/data%20model.png)
 
 ### Data Dictionary for the final Data Model
-Table name -DIM_LISTING	
+Table name -F_LISTING	
 |Field Name    | Data Type | Description                     |
 |--------------|-----------|---------------------------------|
 |listing_id |	integer |	Listing id. FK to dim_listing table|
@@ -54,6 +54,14 @@ Table name -DIM_LISTING
 |review_count	|integer	|Total number of reviews for that listing id|
 |Premium flag	|varchar(1)	|This flag is to identify the listing as premium listing. (expected values - 'Y' as yes and 'N' as no)|
 
+able name -DIM_LISTING	
+|Field Name    | Data Type | Description                     |
+|--------------|-----------|---------------------------------|
+|listing_id |	integer	|Listing id. Primary key|
+|Date	|date	|Date. Primary key|
+|available	|char(1)	|Availibility of the listing for that given date. Expected values - 't' as true and 'f' as false|
+|price |	numeric(18,2)	|Price of the listing on that given date|
+|host_id	|integer	|Host id for that listing|
 
 ### Data Pipeline Design
 The data pipeline was designed using Apache Airflow. The whole process was segregated in several phases:
