@@ -44,6 +44,13 @@ The final data model consists of 6 dimension and 2 fact tables. Following are th
 
 ![data_model](https://github.com/piyalisarkar1209/udacity-DEND-Capstone/blob/main/data%20model.png)
 
+### Data Dictionary for the final Data Model
+Table name -DIM_LISTING	
+|Field Name    | Data Type | Description                     |
+|--------------|-----------|---------------------------------|
+|listing_id |	integer |	Listing id. FK to dim_listing table
+
+
 ### Data Pipeline Design
 The data pipeline was designed using Apache Airflow. The whole process was segregated in several phases:
 - Creating the staging,dimension and fact tables
