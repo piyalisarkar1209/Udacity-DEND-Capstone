@@ -77,17 +77,7 @@ Table name -DIM_PROPERTY
 |amenities	|varchar(2000)	|List of amenities for that property, like- air conditioning, microwave,hair dryer etc.|
 |latitude	|numeric(18,2)	|Latitude of the property|
 |longitude	|numeric(18,2)	|Longitude of the property|
-|premium_flag	|varchar(1)	|"If the property is premium or not. expected values  'Y' as yes and 'N' as no. To get the information I have used few parameters like - 
-                                   host_has_profile_pic = t
-                                   host_identity_verified = t
-                                   room_type  = Entire Home/apt
-                                   superhost = t
-                                   review_scores_rating > 4.5
-                                   review_scores_accuracy	>4.5
-                                   review_scores_cleanliness > 4.5
-                                   review_scores_communication > 4.5
-                                   review_scores_location > 4.5
-                                   review_scores_value > 4.5" |
+|premium_flag	|varchar(1)	|If the property is premium or not. expected values  'Y' as yes and 'N' as no. To get the information I have used few parameters like -<br>         host_has_profile_pic = t,<br>host_identity_verified = t,<br>room_type  = Entire Home/apt,<br>superhost = t,<br> review_scores_rating > 4.5,<br> review_scores_accuracy	>4.5,<br>    review_scores_cleanliness > 4.5,<br> review_scores_communication > 4.5,<br> review_scores_location > 4.5,<br> review_scores_value > 4.5 |
 ### Data Pipeline Design
 The data pipeline was designed using Apache Airflow. The whole process was segregated in several phases:
 - Creating the staging,dimension and fact tables
